@@ -1,4 +1,4 @@
-#This prject is a part of https://scrimba.com/learn/learnreact/ course.
+# This prject is a part of https://scrimba.com/learn/learnreact/ course.
 
 This is a sipmle app, that gets meme pictures from https://imgflip.com/api.
 Next single picture is rendered in app.
