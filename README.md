@@ -1,6 +1,6 @@
-# This prject is a part of https://scrimba.com/learn/learnreact/ course.
+# This project is a part of https://scrimba.com/learn/learnreact/ course.
 
-This is a sipmle app, that gets meme pictures from https://imgflip.com/api.
+This is a sipmle app, that gets meme pictures from local file.
 Next single picture is rendered in app.
 You can add your own text to this picture.
 Just type it in two text boxes and your tex will apear on top of the picture.
