@@ -7,7 +7,11 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 function App() {
   return (
-    <Container sx={{ width: 600 }}>
+    <Container
+      sx={{
+        maxWidth: { xs: "100%", sm: 600 },
+      }}
+    >
       <CssBaseline />
       <Header />
       <Meme />

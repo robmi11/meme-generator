@@ -15,7 +15,7 @@ const Meme = () => {
   const [memes, setMemes] = useState({
     topText: "",
     bottomText: "",
-    randomImg: "http://i.imgflip.com/1bij.jpg",
+    randomImg: "https://i.imgflip.com/24y43o.jpg",
   });
 
   const [allMemeImages, setAllMemeImages] = useState({});
@@ -30,14 +30,34 @@ const Meme = () => {
     });
   };
 
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setMemes((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
   return (
     <Box component="form" mt={5}>
       <Grid container spacing={1}>
         <Grid item xs={6}>
-          <TextField size="small" label="Meme Top Text" />
+          <TextField
+            size="small"
+            label="Meme Top Text"
+            name="topText"
+            onChange={handleInputChange}
+          />
         </Grid>
         <Grid item xs={6} sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <TextField size="small" label="Meme Bottom Text" />
+          <TextField
+            size="small"
+            label="Meme Bottom Text"
+            name="bottomText"
+            onChange={handleInputChange}
+          />
         </Grid>
         <Grid item xs={12} mt={2} width="100%">
           <Button
@@ -46,6 +66,7 @@ const Meme = () => {
               display: "block",
               width: "100%",
               background: "linear-gradient(90deg, #672280 1.18%, #A626D3 100%)",
+              height: { xs: 60, sm: "auto" },
             }}
             onClick={getRandomMemeImg}
           >
@@ -61,9 +82,9 @@ const Meme = () => {
               position: "absolute",
               top: 30,
               width: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.3)",
               textAlign: "center",
               fontWeight: "bold",
+              textShadow: "2px 0px 4px #fff",
             }}
           >
             {memes.topText}
@@ -75,9 +96,9 @@ const Meme = () => {
               position: "absolute",
               bottom: 30,
               width: "100%",
-              backgroundColor: "rgba(255, 255, 255, 0.3)",
               textAlign: "center",
               fontWeight: "bold",
+              textShadow: "2px 0px 4px #fff",
             }}
           >
             {memes.bottomText}
