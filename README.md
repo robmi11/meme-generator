@@ -1,5 +1,7 @@
 # This project is a part of https://scrimba.com/learn/learnreact/ course.
 
+Live at: https://mizianty.000webhostapp.com/
+
 This is a sipmle app, that gets meme pictures from local file.
 Next single picture is rendered in app.
 You can add your own text to this picture.
