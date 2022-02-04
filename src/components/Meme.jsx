@@ -4,12 +4,13 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import allMemes from "../data/memesData";
 import Typography from "@mui/material/Typography";
 
 const Meme = () => {
   useEffect(() => {
-    setAllMemeImages({ ...allMemes.data.memes });
+    fetch("https://api.imgflip.com/get_memes")
+      .then((response) => response.json())
+      .then((data) => setAllMemeImages(data.data.memes));
   }, []);
 
   const [memes, setMemes] = useState({
@@ -18,10 +19,10 @@ const Meme = () => {
     randomImg: "https://i.imgflip.com/24y43o.jpg",
   });
 
-  const [allMemeImages, setAllMemeImages] = useState({});
+  const [allMemeImages, setAllMemeImages] = useState([]);
 
   const getRandomMemeImg = () => {
-    const randomNumber = Math.floor(Math.random() * 100);
+    const randomNumber = Math.floor(Math.random() * allMemeImages.length);
     setMemes((prevState) => {
       return {
         ...prevState,
@@ -39,7 +40,6 @@ const Meme = () => {
       };
     });
   };
-
   return (
     <Box component="form" mt={5}>
       <Grid container spacing={1}>
